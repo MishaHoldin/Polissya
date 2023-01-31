@@ -2,69 +2,6 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
-	//----------------------SLIDER-hero----------------------
-		// var mySwiper = new Swiper('.hero__slider', {
-		// 	slidesPerView: 1,
-		// 	spaceBetween: 30,
-		// 	loop: true,
-		// 	effect: 'fade',
-		// 	autoplay: {
-		// 		delay: 5000,
-		// 	},
-		// 	pagination: {
-		// 		el: '.hero__pagination',
-		// 		clickable: 'true',
-		// 	},
-		// 	navigation: {
-		// 		nextEl: '.hero__next',
-		// 		prevEl: '.hero__prev',
-		// 	},
-		// 	breakpoints: {
-		// 		320: {
-		// 			slidesPerView: 2,
-		// 			spaceBetween: 20
-		// 		},
-		// 	}
-		// });
-
-	//----------------------SCROLL-----------------------
-		const scrollTo = (scrollTo) => {
-			let list = document.querySelector(scrollTo);
-			list = '.' + list.classList[0]  + ' li a[href^="#"';
-	
-			document.querySelectorAll(list).forEach(link => {
-	
-				link.addEventListener('click', function(e) {
-						e.preventDefault();
-						const scrollMenu = document.querySelector(scrollTo);
-	
-						let href = this.getAttribute('href').substring(1);
-	
-						const scrollTarget = document.getElementById(href);
-	
-						// const topOffset = scrollMenu.offsetHeight;
-						const topOffset = 70;
-						const elementPosition = scrollTarget.getBoundingClientRect().top;
-						const offsetPosition = elementPosition - topOffset;
-	
-						window.scrollBy({
-								top: offsetPosition,
-								behavior: 'smooth'
-						});
-	
-						
-						let button = document.querySelector('.hamburger'),
-								nav = document.querySelector('.header__nav'),
-								header = document.querySelector('.header');
-	
-						button.classList.remove('hamburger--active');
-						nav.classList.remove('header__nav--active');
-						header.classList.remove('header--menu');
-				});
-			});
-		};
-		// scrollTo('.header__nav');
-	
 	//----------------------FIXED-HEADER-----------------------
 		const headerFixed = (headerFixed, headerActive) => {
 			const header =  document.querySelector(headerFixed),
@@ -99,45 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		};
 		hamburger('.hamburger', '.header__nav', '.header');
 		
-	//----------------------MODAL-----------------------
-		const modals = (modalSelector) => {
-			const	modal = document.querySelectorAll(modalSelector);
-
-			if (modal) {
-				let i = 1;
-
-				modal.forEach(item => {
-					const wrap = item.id;
-					const link = document.querySelectorAll('.' + wrap);
-
-					link.forEach(linkItem => {
-						let close = item.querySelector('.close');
-							if (linkItem) {
-								linkItem.addEventListener('click', (e) => {
-									if (e.target) {
-										e.preventDefault();
-									}
-									item.classList.add('active');
-								});
-							}
-
-							if (close) {
-								close.addEventListener('click', () => {
-									item.classList.remove('active');
-								});
-							}
-
-						item.addEventListener('click', (e) => {
-							if (e.target === item) {
-								item.classList.remove('active');
-							}
-						});
-					});
-				});
-			}
-
-		};
-		modals('.modal');
+	
 
 	//----------------------FORM-----------------------
 		const forms = (formsSelector) => {
@@ -315,5 +214,24 @@ const mySwiper = new Swiper('.swiper-brand', {
 			nextEl: '.brands__next',
 			prevEl: '.brands__prev',
 	},
-	});
+});
 	
+const loadMore = document.getElementById('loadmore');
+const hide = [...document.querySelectorAll('.news__items')];
+
+hide.splice(0, 3).forEach(
+  elem => elem.classList.remove('hiden')
+);
+
+loadMore.addEventListener('click', function(e) {
+  e.preventDefault();
+  
+  hide.splice(0, 3).forEach(
+    elem => elem.classList.remove('hiden')
+  )
+  
+  if (hide.length == 0) {
+    loadMore.classList.add('hiden');
+	}
+	
+});

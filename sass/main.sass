@@ -125,6 +125,9 @@
 				width: 25px
 				transform: rotate(-45deg)
 
+.hiden
+	display: none 
+
 .body
 	background-color: $main
 
@@ -667,10 +670,14 @@
 		
 
 	&__btn--block
-		height: 150px	
+		display: none
+		
+		+r(1500)
+			height: 150px	
+			display: flex
 
 		+r(767)
-			height: 100px
+			height: 120px
 
 	&__btn--hiden
 		font-family: 'KyivTypeSans-Heavy3'
@@ -685,6 +692,7 @@
 
 		+r(1500)
 			display: flex
+			margin: 20px auto 40px auto
 		
 		+r(767)
 			margin: 20px auto
@@ -695,9 +703,6 @@
 	
 	+r(767)
 		margin-bottom: 60px
-
-	+r(767)
-		margin-bottom: 70px
 
 	&__container
 		background: #1D1D1D
@@ -735,6 +740,9 @@
 		+r(992)
 			grid-template-columns: 1fr
 
+		+r(767)
+			padding: 0 25px
+
 	&__items
 		padding: 0 30px
 		margin-bottom: 30px
@@ -742,6 +750,8 @@
 		img
 			margin-bottom: 30px
 			width: 100%
+			&:hover
+				transform: scale(1.2)
 
 		+r(992)
 			margin-bottom: 50px
@@ -765,7 +775,13 @@
 		text-transform: capitalize
 		color: #FFFFFF
 
+		+r(767)
+			font-size: 26px
+
 .about
+	margin-bottom: 110px
+	+r(767)
+		margin-bottom: 60px
 
 	&__container
 		background: #1D1D1D
@@ -777,6 +793,12 @@
 
 	&__content
 		padding: 110px 75px 75px 75px;
+		+r(992)
+			padding: 50px
+		+r(767)
+			padding: 50px 30px
+		+r(576)
+			padding: 30px 10px
 
 	&__title
 		font-family: 'KyivTypeSans-Heavy3'
@@ -784,6 +806,16 @@
 		font-size: 91px
 		text-transform: uppercase
 		margin-bottom: 40px
+		+r(1600)
+			font-size: 85px
+		+r(1200)
+			font-size: 50px
+		+r(992)
+			font-size: 40px
+		+r(767)
+			font-size: 36px
+			margin-bottom: 20px
+			text-align: center
 
 	&__text	
 		font-family: 'KyivTypeSans-Heavy3'
@@ -791,6 +823,14 @@
 		font-weight: 900;
 		font-size: 35px;
 		margin-bottom: 40px
+		+r(1600)
+			font-size: 32px
+		+r(1200)
+			font-size: 24px
+		+r(992)
+			font-size: 20px
+		+r(576)
+			font-size: 16px
 
 	&__btn
 		font-family: 'KyivTypeSans-Heavy3'
@@ -800,6 +840,7 @@
 
 		+r(767)
 			font-size: 24px
+			margin: 0 auto
 			img
 				width: 30px
 				height: 30px
