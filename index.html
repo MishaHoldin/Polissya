@@ -4,10 +4,10 @@
 	<head>
 
 		<meta charset="utf-8">
-		<title>Start Optimazed</title>
+		<title>Kalunnuk</title>
 		<meta name="description" content="Startup HTML Optimized">
 		<meta name="viewport" content="width=device-width">
-		<link rel="icon" href="img/favicon.ico">
+		<link rel="icon" href="img/kalina-btn.png">
 		<meta property="og:image" content="img/preview.jpg">
 		<link rel="stylesheet" href="css/app.min.css?v=1">
 		<script src="js/app.min.js" defer></script>
@@ -15,27 +15,27 @@
 	</head>
 
 	<body class="body">
-		<header class="header">
+		<header class="header header--active">
 			<div class="header__container container">
-				<nav class="header__wrapper">
-					<div class="header__nav">
+				<nav class="header__wrapper" id="header__nav">
+					<div class="header__nav ">
 						<a href="/">
 							<h1 class="header__title">ПОЛЛІСЯ</h1>
 						</a>
-						<a href="/" class="header__text">
+						<a href="/" class="header__text active">
 							<p>ГОЛОВНА</p>
 						</a>
-						<a href="#news" class="header__text">
+						<a href="#news" class="header__text ">
 							<p>НОВИНИ</p>
 						</a>
-						<a href="brand.html" class="header__text">
+						<a href="brand.html" class="header__text ">
 							<p>ПРО БРЕНД</p>
 						</a>
 					</div>
 				</nav>
 				<button class="hamburger" type="button">
-				<span class="hamburger__item"></span>
-			</button>
+					<span class="hamburger__item"></span>
+				</button>
 			</div>
 		</header>
 
@@ -50,16 +50,16 @@
 					<div class="baner__content">
 						<h3 class="baner__text">за стародавнім рецептом<br>
 							українського Полісся</h3>
-						<img class="baner__img" src="/img/Kalunnuk.png" alt="">
+						<img class="baner__img" src="/img/kalunnuk.png" alt="">
 						<img class="baner__bg" src="./img/kalunnuk-swiper.png" alt="">
 					</div>
-					<button class="baner__btn btn">Детальніше
-						<img src="./img/kalina-btn.png" alt=""></button>
+					<a href="#kalina"><button class="baner__btn btn">Детальніше
+						<img src="./img/kalina-btn.png" alt=""></button></a>
 				</div>
 			</div>
 		</section>
 
-		<section class="brands">
+		<section class="brands" id="brands">
 			<div class="brands__container container">
 				<div class="swiper-brand">
 					<div class="brands__prev"></div>
@@ -103,7 +103,7 @@
 			</div>
 		</section>
 
-		<section class="kalina">
+		<section class="kalina" id="kalina">
 			<div class="kalina__container container">
 				<div class="kalina__wrapper">
 					<div class="kalina__items">
@@ -113,16 +113,16 @@
 						<h2 class="kalina__title">Калинник</h2>
 						<p class="kalina__text">Напій готується з ягід калини. Солодкий, ароматний, корисний, тонізуючий - все це про напій калинник. Стародавній український рецепт лишився, але став більш сучасним. Нові технології і яксні інгредієнти дають неймовірний смак  нопою. Найкраще смакувати калинник охолодженим. Тоді відкривається тонкий смак меду і калини. Кожен бажаючий може замовити цей напій у нас на сайті.
 						</p>
-						<button class="kalina__btn btn">Замовити</button>
+						<a href="#brands"><button class="kalina__btn btn">Замовити</button></a>
 					</div>
 				</div>
 				<div class="kalina__btn--block">
-					<button class="kalina__btn--hiden btn">Замовити</button>
+					<a href="#brands"><button class="kalina__btn--hiden btn">Замовити</button></a>
 				</div>
 			</div>
 		</section>
 
-		<section id="news" class="news">
+		<section  class="news" id="news">
 			<div class="news__container container">
 				<h2 class="news__title">Новини</h2>
 				<div class="news__content">
@@ -138,15 +138,15 @@
 						<img src="./img/news-img3.png" alt="">
 						<p class="news__text">Напої України в наш час</p>
 					</div>
-						<div class="news__items hiden">
+					<div class="news__items hiden">
 						<img src="./img/news-img2.png" alt="">
 						<p class="news__text">Розвиток бренду Полісся</p>
 					</div>
-						<div class="news__items hiden">
+					<div class="news__items hiden">
 						<img src="./img/news-img3.png" alt="">
 						<p class="news__text">Напої України в наш час</p>
 					</div>
-					<div class="news__items hiden" >
+					<div class="news__items hiden">
 						<img src="./img/news-img1.png" alt="">
 						<p class="news__text">Калинник в магазинах України</p>
 					</div>
@@ -154,26 +154,29 @@
 						<img src="./img/news-img3.png" alt="">
 						<p class="news__text">Напої України в наш час</p>
 					</div>
-						<div class="news__items hiden">
+					<div class="news__items hiden">
 						<img src="./img/news-img2.png" alt="">
 						<p class="news__text">Розвиток бренду Полісся</p>
 					</div>
-					<div class="news__items hiden" >
+					<div class="news__items hiden">
 						<img src="./img/news-img1.png" alt="">
 						<p class="news__text">Калинник в магазинах України</p>
-					</div>	
+					</div>
 				</div>
 				<button class="news__btn btn " id="loadmore">Також...</button>
 			</div>
 		</section>
+
 		<footer class="footer">
 			<div class="footer__container container">
 				<h2 class="footer__title">Інформація
 				</h2>
 				<div class="footer__content">
 					<div class="footer__items">
-						<a class="footer__text" href="tel:+380944323489"><img src="./img/phone.svg" alt=""> +380 94 432 34 89</a>
-						<a class="footer__text" href="tel:+380984126409"><img src="./img/phone.svg" alt=""> +380 98 412 64 09</a>
+						<a class="footer__text" href="tel:+380944323489"><img src="./img/phone.svg" alt="">
+							+380 94 432 34 89</a>
+						<a class="footer__text" href="tel:+380984126409"><img src="./img/phone.svg" alt="">
+							+380 98 412 64 09</a>
 					</div>
 					<div class="footer__items">
 						<a class="footer__text" href="mailto:pollisya@gmail.com"><img src="./img/mail.svg" alt="">pollisya@gmail.com</a>
